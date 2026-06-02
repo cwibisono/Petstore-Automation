@@ -10,9 +10,9 @@ test.describe('Petstore User API', () => {
       data: {
         id: userID,
         username: username,
-        firstName: 'Christ',
-        lastName: 'Ario',
-        email: 'christ.ario@test.com',
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'John.Doe@test.com',
         password: 'password123',
         phone: '08123456789',
         userStatus: 1,
@@ -34,7 +34,7 @@ test.describe('Petstore User API', () => {
 
     const body = await response.json();
     expect(body.username).toBe(username);
-    expect(body.firstName).toBe('Christ');
+    expect(body.firstName).toBe('John');
   });
 
   test('PUT /user/{username} - Update user', async ({ request }) => {
@@ -42,13 +42,13 @@ test.describe('Petstore User API', () => {
       data: {
         id: userID,
         username: username,
-        firstName: 'Christ Updated',
-        lastName: 'Ario',
-        email: 'christ.updated@test.com',
+        firstName: 'John Updated',
+        lastName: 'Doe',
+        email: 'john.updated@test.com',
         password: 'newpassword123',
         phone: '08999999999',
         userStatus: 1,
-      },
+      },  
     });
 
     console.log('PUT /user/{username}:', response.status(), await response.text());
